@@ -69,11 +69,16 @@ namespace Library_Manager {
                         {
                             Console.WriteLine($"{i + 1}. {books[i].NameOfBook} [ ]");
                         }
-
-                        int choose = int.Parse(Console.ReadLine());
-                        int index = choose - 1;
-                        books[index].BookIsTook = true;
                     }
+                       int choose = int.Parse(Console.ReadLine());
+                        int index = choose - 1;
+                        if(index >= 0 && index < books.Count)
+                        {
+                            books[index].BookIsTook = true;
+                        }else
+                        {
+                            Console.WriteLine("Wrong Choice");
+                        }
                 }
                 else if(choice == 4)
                 {
@@ -88,11 +93,19 @@ namespace Library_Manager {
                         {
                             Console.WriteLine($"{i + 1}. {books[i].NameOfBook} [ ]");
                         }
-
+                    }
                         int choose = int.Parse(Console.ReadLine());
                         int index = choose - 1;
-                        books[index].BookIsTook = false;
-                    }
+                        if(index >= 0 && index < books.Count)
+                        {
+                            books[index].BookIsTook = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong Choice");
+                        }
+
+
                 }
                 else if (choice == 5)
                 {
